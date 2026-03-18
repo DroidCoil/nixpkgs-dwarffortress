@@ -204,7 +204,10 @@ stdenv.mkDerivation {
   ];
 
   NIX_CFLAGS_COMPILE = [
+    "-Wno-error" # Keep this as a backup
     "-Wno-error=deprecated-enum-enum-conversion"
+    "-Wno-error=unused-result"
+    "-Wno-error=unused-value"
   ]
   ++ optionals (versionOlder version "0.47") [ "-fpermissive" ];
 
