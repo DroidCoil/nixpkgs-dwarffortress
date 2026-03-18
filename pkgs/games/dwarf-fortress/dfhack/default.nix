@@ -183,6 +183,9 @@ stdenv.mkDerivation {
     # Race condition in `Generating codegen.out.xml and df/headers` that is fixed when using Ninja.
     "-GNinja"
     "-DDFHACK_BUILD_ARCH=${arch}"
+    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    "-DCMAKE_CXX_FLAGS=-Wno-error"
+    "-DCMAKE_C_FLAGS=-Wno-error"
 
     # Don't download anything.
     "-DDOWNLOAD_RUBY=OFF"
